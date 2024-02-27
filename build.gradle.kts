@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.iridium"
-version = "1.0.6"
+version = "1.0.9"
 description = "IridiumColorAPI"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
@@ -25,6 +25,10 @@ publishing {
     publications.create<MavenPublication>("maven") {
         from(components["java"])
     }
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    options.encoding = "UTF-8"
 }
 
 tasks {
